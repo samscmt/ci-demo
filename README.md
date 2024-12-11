@@ -17,6 +17,34 @@ Wind Speed: 2.8 km/h
 The weather is not ideal for outdoor activities.
 ```
 
+## Projektstruktur
+
+Das Projekt verwendet die Header-only-Bibliotheken `nlohmann::json`, `httplib`
+und `catch2` (Version 2).
+
+```text
+.
+├── LICENSE
+├── Makefile
+├── README.md
+├── include
+│   ├── OpenMeteoWeatherService.hpp
+│   ├── WeatherAnalyzer.hpp
+│   ├── WeatherData.hpp
+│   ├── WeatherPresenter.hpp
+│   ├── WeatherService.hpp
+│   ├── httplib.h
+│   └── json.hpp
+├── main.cpp
+├── src
+│   ├── OpenMeteoWeatherService.cpp
+│   ├── WeatherAnalyzer.cpp
+│   └── WeatherPresenter.cpp
+└── test
+    ├── catch.hpp
+    └── testWeatherAnalyzer.cpp
+```
+
 ## Übersetzen und Ausführen des Projekts
 
 Das Repository enthält bereits ein Makefile, mittels dessen man sich das Projekt
@@ -32,7 +60,7 @@ g++ -Wall -Wextra -Wpedantic -std=c++17 -g -O0 -I include build/main.o  build/Op
 ```
 
 ```text
-make execute
+% make execute
 ./build/mainDebug
 Esslingen University:
 Temperature: 3.3 °C
@@ -47,7 +75,7 @@ The weather is not ideal for outdoor activities.
 Außerdem kann man mittels `make test` auch die zugehörigen Unit-Tests ausführen lassen:
 
 ```text
-make test
+% make test
 g++ -Wall -Wextra -Wpedantic -std=c++17 -g -O0 -I include -c test/testWeatherAnalyzer.cpp -o build/tests/testWeatherAnalyzer.o
 g++ -Wall -Wextra -Wpedantic -std=c++17 -g -O0 -I include  build/tests/testWeatherAnalyzer.o  build/OpenMeteoWeatherService.o  build/WeatherAnalyzer.o  build/WeatherPresenter.o  -o build/tests/testDebug
 ./build/tests/testDebug
