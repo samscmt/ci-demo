@@ -15,8 +15,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - name: Install Clang-Format
         run: sudo apt-get install -y clang-format
@@ -75,7 +73,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Run tests
-        run: make run-tests
+        run: make test
       - name: Upload test results
         uses: actions/upload-artifact@v4
         with:
