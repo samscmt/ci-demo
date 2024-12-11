@@ -72,10 +72,7 @@ jobs:
             -not -path "./test/catch.hpp" \
             -not -name "httplib.h" \
             -not -name "json.hpp" \
-            -exec clang-tidy \
-              --header-filter="^(?!.*(catch|httplib|json)).*$" \
-              --checks="-clang-analyzer-cplusplus.NewDeleteLeaks" \
-              {} \+
+            -exec clang-tidy {} \+
 
   build:
     runs-on: ubuntu-24.04
