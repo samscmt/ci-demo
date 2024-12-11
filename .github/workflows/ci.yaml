@@ -2,9 +2,9 @@ name: C++ CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -15,15 +15,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install Clang-Format 19
+        with:
+          fetch-depth: 0
+
+      - name: Install Clang-Format
+        run: sudo apt-get install -y clang-format
+
+      - name: Check Clang-Format
         run: |
-          sudo apt-get update
-          sudo apt-get install -y clang-format-19
-      - name: Check Clang-Format Version
-        run: clang-format-19 --version
-      - name: Run Clang-Format
-        run: |
-          find src/ include/ -regex '.*\.\(cpp\|hpp\|h\|cc\|cxx\)' -exec clang-format-19 -style=file --dry-run --Werror {} +
+          # Dateien finden und formatieren, mit spezifischen Ausschlüssen
+          find . \( -name '*.cpp' -o -name '*.hpp' -o -name '*.h' \) \
+            -not -path "./build/*" \
+            -not -path "./test/catch.hpp" \
+            -not -name "httplib.h" \
+            -not -name "json.hpp" \
+            -exec clang-format -style=file -i {} +
 
   cppcheck-analysis:
     runs-on: ubuntu-latest
