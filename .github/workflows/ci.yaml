@@ -13,13 +13,17 @@ permissions:
 jobs:
   format-check:
     runs-on: ubuntu-latest
-    container:
-      image: llvmorg/clang:19
     steps:
       - uses: actions/checkout@v4
+      - name: Install Clang-Format 19
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clang-format-19
+      - name: Check Clang-Format Version
+        run: clang-format-19 --version
       - name: Run Clang-Format
         run: |
-          find src/ include/ -regex '.*\.\(cpp\|hpp\|h\|cc\|cxx\)' -exec clang-format -style=file --dry-run --Werror {} +
+          find src/ include/ -regex '.*\.\(cpp\|hpp\|h\|cc\|cxx\)' -exec clang-format-19 -style=file --dry-run --Werror {} +
 
   cppcheck-analysis:
     runs-on: ubuntu-latest
