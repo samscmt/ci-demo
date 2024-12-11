@@ -8,7 +8,7 @@
 build/
 html/
 _minted-coding-exercises/
-.DS_Store/
+.DS_Store
 
 ################################
 ############ LaTeX #############
