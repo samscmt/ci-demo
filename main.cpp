@@ -14,12 +14,19 @@ int main() {
     weather.getWeatherData(latEsslingen, lonEsslingen);
     presenter.displayWeather(weather.getWeatherInfo(), "Esslingen University");
 
-    // Sunnyvale, California - coordinates
-    double latSunnyvale = 37.3688;
-    double lonSunnyvale = -122.0363;
+    // Lahaina, Hawaii - coordinates
+    double latLahaina = 20.878;
+    double lonLahaina = -156.683;
 
-    weather.getWeatherData(latSunnyvale, lonSunnyvale);
-    presenter.displayWeather(weather.getWeatherInfo(), "Sunnyvale, California");
+    weather.getWeatherData(latLahaina, lonLahaina);
+    presenter.displayWeather(weather.getWeatherInfo(), "Lahaina, Hawaii");
+
+    // // Sunnyvale, California - coordinates
+    // double latSunnyvale = 37.3688;
+    // double lonSunnyvale = -122.0363;
+
+    // weather.getWeatherData(latSunnyvale, lonSunnyvale);
+    // presenter.displayWeather(weather.getWeatherInfo(), "Sunnyvale, California");
 
     return 0;
 }

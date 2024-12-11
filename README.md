@@ -7,14 +7,14 @@ Wetter für Aktivitäten im Freien eignet, z.B. wie folgt:
 
 ```text
 Esslingen University:
-Temperature: 3.3 °C
-Wind Speed: 6.4 km/h
+Temperature: 3.7 °C
+Wind Speed: 6.9 km/h
 The weather is not ideal for outdoor activities.
 
-Sunnyvale, California:
-Temperature: 6.2 °C
-Wind Speed: 2.8 km/h
-The weather is not ideal for outdoor activities.
+Lahaina, Hawaii:
+Temperature: 23.1 °C
+Wind Speed: 9 km/h
+It's a good day for outdoor activities!
 ```
 
 ## Projektstruktur
@@ -63,13 +63,13 @@ g++ -Wall -Wextra -Wpedantic -std=c++17 -g -O0 -I include build/main.o  build/Op
 % make execute
 ./build/mainDebug
 Esslingen University:
-Temperature: 3.3 °C
-Wind Speed: 6.4 km/h
+Temperature: 3.7 °C
+Wind Speed: 6.9 km/h
 The weather is not ideal for outdoor activities.
-Sunnyvale, California:
-Temperature: 6.2 °C
-Wind Speed: 2.8 km/h
-The weather is not ideal for outdoor activities.
+Lahaina, Hawaii:
+Temperature: 23.1 °C
+Wind Speed: 9 km/h
+It's a good day for outdoor activities!
 ```
 
 Außerdem kann man mittels `make test` auch die zugehörigen Unit-Tests ausführen lassen:
