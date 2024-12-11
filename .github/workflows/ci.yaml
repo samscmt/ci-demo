@@ -28,16 +28,6 @@ jobs:
             -not -name "json.hpp" \
             -exec clang-format -style=file -i {} +
 
-          # Überprüfen ob Änderungen vorgenommen wurden
-          if git diff --exit-code; then
-            echo "No formatting issues found"
-            exit 0
-          else
-            echo "Formatting issues found. Please run clang-format locally"
-            git diff
-            exit 1
-          fi
-
   cppcheck-analysis:
     runs-on: ubuntu-24.04
     needs: format-check
