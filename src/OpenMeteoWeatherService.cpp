@@ -15,8 +15,8 @@ WeatherData OpenMeteoWeatherService::getWeatherData(double latitude, double long
     if (res && res->status == 200) {
         json response = json::parse(res->body, nullptr, false);
         if (!response.is_discarded() && response.contains("current_weather")) {
-            const double temperature = response["current_weather"]["temperature"].get<double>();
-            const double windSpeed = response["current_weather"]["windspeed"].get<double>();
+            double temperature = response["current_weather"]["temperature"].get<double>();
+            double windSpeed = response["current_weather"]["windspeed"].get<double>();
             return {temperature, windSpeed, true};
         }
     }
