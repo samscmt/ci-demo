@@ -21,12 +21,12 @@ jobs:
 
       - name: Check Clang-Format
         run: |
-          find . \( -name '*.cpp' -o -name '*.hpp' -o -name '*.h' \) \
+            find . \( -name '*.cpp' -o -name '*.hpp' -o -name '*.h' \) \
             -not -path "./build/*" \
             -not -path "./test/catch.hpp" \
             -not -name "httplib.h" \
             -not -name "json.hpp" \
-            -exec clang-format -style=file -i {} +
+            -exec clang-format -style=file -n -Werror {} +
 
   cppcheck-analysis:
     runs-on: ubuntu-24.04
