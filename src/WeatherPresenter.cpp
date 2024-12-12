@@ -1,12 +1,13 @@
 #include "WeatherPresenter.hpp"
 #include <iostream>
 
-void WeatherPresenter::displayWeather(const WeatherInfo &info, const std::string &locationName) const {
+void WeatherPresenter::displayWeather(const WeatherInfo &info,
+                                      const std::string &locationName) const {
     std::cout << locationName << ":\n";
 
     if (info.data.success) {
         std::cout << "Temperature: " << info.data.temperature << " °C\n"
-            << "Wind Speed: " << info.data.windSpeed << " km/h\n";
+                  << "Wind Speed: " << info.data.windSpeed << " km/h\n";
 
         if (info.isGoodForOutdoor) {
             std::cout << "It's a good day for outdoor activities!\n";

@@ -1,7 +1,7 @@
 #pragma once
-#include "WeatherService.hpp"
 #include "WeatherData.hpp"
 #include "WeatherPresenter.hpp"
+#include "WeatherService.hpp"
 
 class WeatherAnalyzer {
 public:

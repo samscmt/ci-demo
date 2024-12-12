@@ -1,7 +1,7 @@
 #include "WeatherAnalyzer.hpp"
 
 WeatherAnalyzer::WeatherAnalyzer(WeatherService &weatherService)
-    : m_weatherService(weatherService), m_weatherData{ 0.0, 0.0, false } {
+    : m_weatherService(weatherService), m_weatherData{0.0, 0.0, false} {
 }
 
 WeatherData WeatherAnalyzer::getWeatherData(double latitude, double longitude) {
@@ -11,10 +11,10 @@ WeatherData WeatherAnalyzer::getWeatherData(double latitude, double longitude) {
 
 WeatherInfo WeatherAnalyzer::getWeatherInfo() const {
     return WeatherInfo{
-        m_weatherData,                  // current weather data
-        isGoodForOutdoorActivities(),   // check if weather is good for outdoor activities
-        isHighWindWarning(),            // check if there's a high wind warning
-        isColdWeatherWarning()          // check if there's a cold temperature warning
+        m_weatherData,                // current weather data
+        isGoodForOutdoorActivities(), // check if weather is good for outdoor activities
+        isHighWindWarning(),          // check if there's a high wind warning
+        isColdWeatherWarning()        // check if there's a cold temperature warning
     };
 }
 

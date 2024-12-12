@@ -1,7 +1,7 @@
 #pragma once
 
-#include "WeatherService.hpp"
 #include "WeatherData.hpp"
+#include "WeatherService.hpp"
 
 #include "httplib.h"
 #include "json.hpp"
