@@ -29,6 +29,6 @@ int main() {
     // presenter.displayWeather(weather.getWeatherInfo(), "Sunnyvale, California");
 
     return 0;
-}
+    }
 // Hendrik macht alles gut
 // Läuft nicht
