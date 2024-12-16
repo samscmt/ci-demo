@@ -12,7 +12,7 @@ int main() {
     double lonEsslingen = 9.311;
 
     weather.getWeatherData(latEsslingen, lonEsslingen);
-    presenter.displayWeather(weather.getWeatherInfo(), "Esslingen University");
+    presenter.displayWeather(weather.getWeatherInfo(), "Esslingen1 University");
 
     // Lahaina, Hawaii  - coordinates
     double latLahaina = 20.878;
@@ -29,6 +29,6 @@ int main() {
     // presenter.displayWeather(weather.getWeatherInfo(), "Sunnyvale, California");
 
     return 0;
-    }
+}
 // Hendrik macht alles gut
 // Läuft nicht
